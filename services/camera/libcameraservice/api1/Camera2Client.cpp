@@ -1606,6 +1606,7 @@ void Camera2Client::notifyAutoFocus(uint8_t newState, int triggerId) {
                 }
         }
     }
+    /* cause of build failure:
     if (sendMovingMessage) {
         SharedCameraCallbacks::Lock l(mSharedCameraCallbacks);
         if (l.mRemoteCallback != 0) {
@@ -1613,6 +1614,7 @@ void Camera2Client::notifyAutoFocus(uint8_t newState, int triggerId) {
                     afInMotion ? 1 : 0, 0);
         }
     }
+    */
     if (sendCompletedMessage) {
         ATRACE_ASYNC_END(kAutofocusLabel, triggerId);
         SharedCameraCallbacks::Lock l(mSharedCameraCallbacks);
